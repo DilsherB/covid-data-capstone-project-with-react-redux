@@ -10,7 +10,6 @@ export const fetchContinents = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(URL_CONTINENTS);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return "something went wrong!";
@@ -23,7 +22,6 @@ export const fetchCountries = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(URL_CONTRIES);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return "something went wrong!";
@@ -34,7 +32,6 @@ export const fetchCountries = createAsyncThunk(
 export const fetchAll = createAsyncThunk("APIData/fetchAll", async () => {
   try {
     const response = axios.get(URL_ALL);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return "something went wrong!";
