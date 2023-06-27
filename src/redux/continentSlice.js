@@ -11,18 +11,20 @@ const continentSlice = createSlice({
   name: "continents",
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchContinents.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [fetchContinents.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.continents = action.payload;
-    },
-    [fetchContinents.rejected]: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchContinents.pending, () => ({
+        ...initialState,
+        isLoading: true,
+      }))
+      .addCase(fetchContinents.fulfilled, (_, action) => ({
+        ...action.payload,
+        isLoading: false,
+      }))
+      .addCase(fetchContinents.rejected, (state, action) => {
+        state.error = action.error;
+        return { ...state };
+      });
   },
 });
 

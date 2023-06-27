@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const URL_CONTINENTS = "https://disease.sh/v3/covid-19/continents";
-const URL_CONTRIES = "https://disease.sh/v3/covid-19/countries";
+const URL_COUNTRIES = "https://disease.sh/v3/covid-19/countries";
 const URL_ALL = "https://disease.sh/v3/covid-19/all";
 
 export const fetchContinents = createAsyncThunk(
@@ -21,7 +21,7 @@ export const fetchCountries = createAsyncThunk(
   "APIData/fetchCountries",
   async () => {
     try {
-      const response = await axios.get(URL_CONTRIES);
+      const response = await axios.get(URL_COUNTRIES);
       return response.data;
     } catch (error) {
       return "something went wrong!";

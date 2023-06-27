@@ -11,18 +11,20 @@ const countrySlice = createSlice({
   name: "countries",
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchCountries.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [fetchCountries.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.countries = action.payload;
-    },
-    [fetchCountries.rejected]: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCountries.pending, () => ({
+        ...initialState,
+        isLoading: true,
+      }))
+      .addCase(fetchCountries.fulfilled, (_, action) => ({
+        ...action.payload,
+        isLoading: false,
+      }))
+      .addCase(fetchCountries.rejected, (state, { error }) => ({
+        ...state,
+        error,
+      }));
   },
 });
 
