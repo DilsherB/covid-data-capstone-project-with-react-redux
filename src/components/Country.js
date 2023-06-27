@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchCountries } from "../redux/countrySlice";
 
 const Country = () => {
-  const { countries, loading } = useSelector((state) => state.countrySlice);
+  const { countries, loading, error } = useSelector(
+    (state) => state.countrySlice
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCountries());
@@ -12,7 +14,7 @@ const Country = () => {
     <div>
       <h1>Country Page</h1>
       {loading && <h3>Loading...</h3>}
-      {/* {error && <h3>{error}</h3>} */}
+      {error && <h3>{error}</h3>}
       {countries.map((country) => {
         return (
           <div key={country.country}>
