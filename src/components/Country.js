@@ -28,7 +28,8 @@ const Country = () => {
               </div>
               <div className="text-left h-40">
                 <h2 className="text-2xl md:text-3xl underline mb-5">
-                  Country: {country.country}
+                  Country:{" "}
+                  <span className="text-blue-900">{country.country}</span>
                 </h2>
                 <p className="flex justify-between">
                   <span>Population: </span>
