@@ -23,7 +23,7 @@ const Continent = () => {
               key={continent.continent}
             >
               <div className="text-left h-20">
-                <h2 className="text-2xl md:text-2xl mb-5">
+                <h2 className="text-2xl md:text-2xl mb-3">
                   continent:{" "}
                   <span className="text-blue-900">{continent.continent}</span>
                 </h2>
