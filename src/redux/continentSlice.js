@@ -28,7 +28,7 @@ const continentSlice = createSlice({
       })
       .addCase(fetchContinent.fulfilled, (state, action) => {
         state.loading = false;
-        state.continent = action.payload;
+        state.continents = action.payload;
         state.error = "";
       })
       .addCase(fetchContinent.rejected, (state, action) => {
