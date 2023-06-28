@@ -15,11 +15,11 @@ const Country = () => {
     <div>
       {loading && <h3 className="text-center">Loading...</h3>}
       {error && <h3>{error}</h3>}
-      <div className="grid md:grid-cols-2 mx-5 gap-10 b-10">
+      <div className="grid md:grid-cols-2 mx-5 gap-10">
         {countries.map((country) => {
           return (
             <div
-              className="h-96 p-3 border-2 rounded bg-white flex flex-col justify-around"
+              className="h-96 p-3 border-2 shadow-lg rounded bg-white flex flex-col justify-around"
               key={country.country}
             >
               <div className="flex gap-3">
