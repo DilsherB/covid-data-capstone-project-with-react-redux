@@ -4,7 +4,7 @@ import axios from "axios";
 const URL_CONTINENT = "https://disease.sh/v3/covid-19/continents";
 
 const initialState = {
-  continent: [],
+  continents: [],
   loading: false,
   error: "",
 };
