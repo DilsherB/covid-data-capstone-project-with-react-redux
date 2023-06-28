@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchContinent } from "../redux/continentSlice";
 import DateComponent from "../globals";
 
-const Country = () => {
+const Continent = () => {
   const { continents, loading, error } = useSelector(
     (state) => state.continentSlice
   );
@@ -76,4 +76,4 @@ const Country = () => {
   );
 };
 
-export default Country;
+export default Continent;
