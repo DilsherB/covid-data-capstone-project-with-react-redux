@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchContinent } from "../redux/continentSlice";
+import DateComponent from "../globals";
 
 const Country = () => {
   const { continents, loading, error } = useSelector(
     (state) => state.continentSlice
   );
-  console.log(continents);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchContinent());
@@ -18,7 +18,7 @@ const Country = () => {
       {continents.map((continent) => {
         return (
           <div
-            className="h-80 border-2 rounded p-5 bg-white flex flex-col justify-around"
+            className="h-96 md:h-80 xl:h-64 border-2 rounded p-5 bg-white flex flex-col justify-around"
             key={continent.continent}
           >
             <div className="text-left h-20">
@@ -64,6 +64,10 @@ const Country = () => {
                 <span>Today Deaths: </span>
                 <span>{continent.todayDeaths}</span>
               </p>
+            </div>
+            <div className="flex justify-around pt-3">
+              <span>Updated on: </span>
+              <span>{DateComponent(continent.updated)}</span>
             </div>
           </div>
         );
