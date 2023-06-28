@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCountries } from "../redux/countrySlice";
+import DateComponent from "../globals";
 
 const Country = () => {
   const { countries, loading, error } = useSelector(
@@ -11,13 +12,13 @@ const Country = () => {
     dispatch(fetchCountries());
   }, [dispatch]);
   return (
-    <div className="grid md:grid-cols-2 mx-5 gap-10 mb-10">
+    <div className="grid md:grid-cols-2 mx-5 gap-10 b-10">
       {loading && <h3>Loading...</h3>}
       {error && <h3>{error}</h3>}
       {countries.map((country) => {
         return (
           <div
-            className="h-80 border-2 rounded p-5 bg-white"
+            className="h-96 p-3 border-2 rounded bg-white flex flex-col justify-around"
             key={country.country}
           >
             <div className="flex gap-3">
@@ -77,6 +78,10 @@ const Country = () => {
                 <span>Today Deaths: </span>
                 <span>{country.todayDeaths}</span>
               </p>
+            </div>
+            <div className="flex justify-around pt-3">
+              <span>Updated on: </span>
+              <span>{DateComponent(country.updated)}</span>
             </div>
           </div>
         );
