@@ -16,7 +16,10 @@ const Country = () => {
       {error && <h3>{error}</h3>}
       {countries.map((country) => {
         return (
-          <div className="h-80 border-2 rounded p-5" key={country.country}>
+          <div
+            className="h-80 border-2 rounded p-5 bg-white"
+            key={country.country}
+          >
             <div className="flex gap-3">
               <div className="bg-slate-200 h-32 w-1/3 flex items-center justify-center rounded p-3">
                 <img
@@ -27,7 +30,7 @@ const Country = () => {
                 />
               </div>
               <div className="text-left h-40">
-                <h2 className="text-2xl md:text-3xl underline mb-5">
+                <h2 className="text-2xl md:text-2xl mb-5">
                   Country:{" "}
                   <span className="text-blue-900">{country.country}</span>
                 </h2>
