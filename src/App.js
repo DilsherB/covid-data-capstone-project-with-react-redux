@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="app bg-gray-50">
       <Navbar />
-      {/* <Home /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />

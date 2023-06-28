@@ -13,6 +13,7 @@ const Home = () => {
         <p>View by</p>
         <div>
           <input
+            className="cursor-pointer"
             type="radio"
             value="country"
             checked={radio === "country"}
@@ -22,6 +23,7 @@ const Home = () => {
         </div>
         <div>
           <input
+            className="cursor-pointer"
             type="radio"
             value="continent"
             checked={radio === "continent"}
