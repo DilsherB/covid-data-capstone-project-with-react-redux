@@ -1,28 +1,40 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchCountries } from "./APIData";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
+
+const URL_COUNTRIES = "https://disease.sh/v3/covid-19/countries";
 
 const initialState = {
   countries: [],
-  isLoading: false,
-  error: null,
+  loading: false,
+  error: "",
 };
+
+export const fetchCountries = createAsyncThunk(
+  "countries/fetchCountries",
+  async () => {
+    const res = await axios.get(URL_COUNTRIES);
+    return res.data;
+  }
+);
 
 const countrySlice = createSlice({
   name: "countries",
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchCountries.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [fetchCountries.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.countries = action.payload;
-    },
-    [fetchCountries.rejected]: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCountries.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchCountries.fulfilled, (state, action) => {
+        state.loading = false;
+        state.countries = action.payload;
+        state.error = "";
+      })
+      .addCase(fetchCountries.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 
