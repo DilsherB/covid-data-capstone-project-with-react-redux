@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { FaClock } from "react-icons/fa";
 import { fetchCountries } from "../redux/countrySlice";
 import DateComponent from "../globals";
 
@@ -19,11 +20,11 @@ const Country = () => {
         {countries.map((country) => {
           return (
             <div
-              className="h-96 p-3 border-2 shadow-lg rounded bg-white flex flex-col justify-around"
+              className="h-max p-3 border-2 shadow-lg rounded bg-white flex flex-col justify-around"
               key={country.country}
             >
               <div className="flex gap-3">
-                <div className="bg-slate-200 h-32 w-1/3 flex items-center justify-center rounded p-3">
+                <div className="bg-slate-200 h-32 lg:h-max lg:mb-5 w-1/3 flex items-center justify-center rounded p-3">
                   <img
                     // width={200}
                     className="rounded"
@@ -46,7 +47,7 @@ const Country = () => {
                   </p>
                 </div>
               </div>
-              <div className="p-3 grid gap-x-20 grid-cols-2 text-left bg-slate-300 rounded">
+              <div className="p-3 grid gap-x-20 md:grid-cols-2 text-left bg-slate-300 rounded">
                 <p className="flex justify-between">
                   <span>Total Cases: </span>
                   <span>{country.cases}</span>
@@ -80,7 +81,10 @@ const Country = () => {
                   <span>{country.todayDeaths}</span>
                 </p>
               </div>
-              <div className="flex justify-around pt-3">
+              <div className="flex justify-center gap-5 pt-3 leading-10 align-middle">
+                <span className="mt-3">
+                  <FaClock />
+                </span>
                 <span>Updated on: </span>
                 <span>{DateComponent(country.updated)}</span>
               </div>
