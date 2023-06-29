@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { FaClock } from "react-icons/fa";
 import { fetchContinent } from "../redux/continentSlice";
 import DateComponent from "../globals";
 
@@ -66,7 +67,10 @@ const Continent = () => {
                   <span>{continent.todayDeaths}</span>
                 </p>
               </div>
-              <div className="flex justify-around pt-3">
+              <div className="flex justify-center gap-5 pt-3 leading-10 align-middle">
+                <span className="mt-3">
+                  <FaClock />
+                </span>
                 <span>Updated on: </span>
                 <span>{DateComponent(continent.updated)}</span>
               </div>
