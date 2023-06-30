@@ -1,6 +1,7 @@
 import React from "react";
 import Country from "./Country";
 import Continent from "./Continent";
+import Global from "./Global";
 
 const Home = () => {
   const [radio, setRadio] = React.useState("country");
@@ -32,6 +33,7 @@ const Home = () => {
           Continent
         </div>
       </div>
+      <Global />
       {radio === "country" && <Country />}
       {radio === "continent" && <Continent />}
     </div>

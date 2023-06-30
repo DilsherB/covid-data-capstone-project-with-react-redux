@@ -8,7 +8,7 @@ const Navbar = () => {
     contact: "contact",
   };
   return (
-    <ul className="flex justify-between mx-5 h-10 bg-slate-200 px-5 py-2 rounded-b mb-3">
+    <ul className="flex justify-between mx-5 my-0.5 h-10 bg-slate-200 px-5 py-2 rounded-b mb-3">
       <h3 className="">Covid-19 Data</h3>
       <div className="hidden md:flex gap-10">
         {Object.keys(menuItems).map((item) => (
