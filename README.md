@@ -105,7 +105,7 @@ Live Demo [here](https://capstone-h4wy.onrender.com/)
 
 # 🚀 [Live Presentation] <a name="presentation"></a>
 
-Live Presentation [here](https://www.loom.com/share/ee7fd017d99a4341a76b2273569f2550)
+See Live Presentation [here](https://www.youtube.com/watch?v=mnsmMjfYyRk)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
