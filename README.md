@@ -101,11 +101,11 @@ After you're finished please remove all the comments and instructions!
 
 # 🚀 [Live Demo] <a name="live-demo"></a>
 
-You can see the app working [here](https://capstone-h4wy.onrender.com/)
+Live Demo [here](https://capstone-h4wy.onrender.com/)
 
 # 🚀 [Live Presentation] <a name="presentation"></a>
 
-You can see the app working [here](https://capstone-h4wy.onrender.com/)
+Live Presentation [here](https://www.loom.com/share/ee7fd017d99a4341a76b2273569f2550)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
