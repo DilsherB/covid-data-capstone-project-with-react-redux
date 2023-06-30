@@ -4,13 +4,11 @@ import Navbar from "./components/NavBar";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Global from "./components/Global";
 
 function App() {
   return (
     <div className="app bg-gray-50">
       <Navbar />
-      <Global />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
