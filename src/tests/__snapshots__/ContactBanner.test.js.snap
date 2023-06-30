@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ContactBanner> should render component 1`] = `
+<div
+  className="bg-slate-300 rounded-lg p-3 flex gap-6 mb-5"
+>
+  <img
+    alt="Developer"
+    className="rounded-full w-28 h-28"
+    src="My Profile Photo.jpeg"
+  />
+  <div>
+    <h1
+      className="text-2xl font-bold"
+    >
+      Dilsher Balouch
+    </h1>
+    <p
+      className="text-lg font-semibold text-slate-600"
+    >
+      Full-Stack Developer
+    </p>
+    <p
+      className="text-lg font-semibold text-slate-600 flex justify-between"
+    >
+      <a
+        href="https://www.linkedin.com/in/dilsherbalouch/"
+        rel="noreferrer"
+        target="_blank"
+      />
+      <a
+        href="https://www.facebook.com/dilsherb/"
+        rel="noreferrer"
+        target="_blank"
+      />
+      <a
+        href="https://github.com/DilsherB"
+        rel="noreferrer"
+        target="_blank"
+      />
+      <a
+        href="https://stackoverflow.com/users/17731460/dilsher-balouch"
+        rel="noreferrer"
+        target="_blank"
+      />
+    </p>
+  </div>
+</div>
+`;
