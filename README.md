@@ -37,6 +37,7 @@ After you're finished please remove all the comments and instructions!
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [Live Presentation](#presentation)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -100,7 +101,11 @@ After you're finished please remove all the comments and instructions!
 
 # 🚀 [Live Demo] <a name="live-demo"></a>
 
-You can see the app working [here](https://Capstone(Reactjs & Redux)-yk2v.onrender.com)
+You can see the app working [here](https://capstone-h4wy.onrender.com/)
+
+# 🚀 [Live Presentation] <a name="presentation"></a>
+
+You can see the app working [here](https://capstone-h4wy.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
