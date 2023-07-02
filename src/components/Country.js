@@ -4,7 +4,6 @@ import { FaClock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { fetchCountries } from "../redux/countrySlice";
 import DateComponent from "../globals";
-import Detail from "./Detail";
 
 const Country = () => {
   const [show, setShow] = useState(false);
