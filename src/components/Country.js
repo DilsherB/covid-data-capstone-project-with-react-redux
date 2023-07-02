@@ -18,10 +18,6 @@ const Country = () => {
     setCurrentCuntary(country);
     setShow(true);
   };
-  const handleHide = () => {
-    // setHide(!hide);
-    setShow(false);
-  };
 
   return (
     <div>
@@ -66,7 +62,7 @@ const Country = () => {
                   <button
                     type="button"
                     className="w-max text-white bg-slate-700 hover:bg-slate-300 rounded-lg px-6 py-1 mb-1"
-                    onClick={handleHide}
+                    onClick={() => setShow(false)}
                   >
                     Hide Details
                   </button>
@@ -106,13 +102,20 @@ const Country = () => {
                   </div>
                 </div>
               ) : (
-                <div className="flex justify-center m-0">
+                <div className="flex justify-center gap-2">
                   <button
                     type="button"
-                    className="w-max text-white bg-slate-700 hover:bg-slate-300 rounded-lg px-8 py-2"
+                    className="w-max text-xs sm:text-base text-white bg-slate-700 hover:bg-slate-300 rounded-lg px-1 md:px-6 py-1 md:py-2"
                     onClick={() => handleShow(country.country)}
                   >
-                    Show Details{" "}
+                    Show Detail{" "}
+                  </button>
+                  <button
+                    type="button"
+                    className="w-max text-xs sm:text-base text-white bg-slate-700 hover:bg-slate-300 rounded-lg px-1 md:px-6 py-1 md:py-2"
+                    onClick={() => handleShow(country.country)}
+                  >
+                    Open Detail{" "}
                   </button>
                 </div>
               )}
