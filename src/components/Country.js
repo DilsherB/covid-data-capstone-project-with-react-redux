@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaClock } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { fetchCountries } from "../redux/countrySlice";
 import DateComponent from "../globals";
+import Detail from "./Detail";
 
 const Country = () => {
   const [show, setShow] = useState(false);
@@ -10,6 +12,7 @@ const Country = () => {
   const { countries, loading, error } = useSelector(
     (state) => state.countrySlice
   );
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCountries());
@@ -17,6 +20,10 @@ const Country = () => {
   const handleShow = (country) => {
     setCurrentCuntary(country);
     setShow(true);
+  };
+  const handleOpenDetail = (country) => {
+    setCurrentCuntary(country);
+    navigate(`/country/${country}`);
   };
 
   return (
@@ -113,7 +120,7 @@ const Country = () => {
                   <button
                     type="button"
                     className="w-max text-xs sm:text-base text-white bg-slate-700 hover:bg-slate-300 rounded-lg px-1 md:px-6 py-1 md:py-2"
-                    onClick={() => handleShow(country.country)}
+                    onClick={() => handleOpenDetail(country.country)}
                   >
                     Open Detail{" "}
                   </button>
