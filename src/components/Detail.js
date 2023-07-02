@@ -1,22 +1,35 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+// import PropTypes from 'prop-types';
+import { useSelector } from "react-redux";
 
-import { FaArrowLeft } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+const Detail = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [currentCuntary, setCurrentCuntary] = useState("Albania");
 
-const Detail = ({ thisCountry }) => {
+  const countryData = useSelector((state) => state.countrySlice.countries.find(
+    (country) => country.country === currentCuntary
+  ));
   return (
-    <div className="mx-5">
-      <NavLink to="/home">
-        <FaArrowLeft />
-      </NavLink>
-      <h1>Detail</h1>
-      <h1>{thisCountry}</h1>
+    <div>
+      <div>
+        <h1>{countryData.country}</h1>
+        <p>Population: {countryData.population}</p>
+        <p>Continent: {countryData.continent}</p>
+        <p>Total Cases: {countryData.cases}</p>
+        <p>Total Recovered: {countryData.recovered}</p>
+        <p>Today Cases: {countryData.todayCases}</p>
+        <p>Today Recovered: {countryData.todayRecovered}</p>
+        <p>Deaths: {countryData.deaths}</p>
+        <p>Critical: {countryData.critical}</p>
+        <p>Active: {countryData.active}</p>
+        <p>Today Deaths: {countryData.todayDeaths}</p>
+      </div>
     </div>
   );
 };
-Detail.propTypes = {
-  thisCountry: PropTypes.string.isRequired,
-};
+
+// Detail.propTypes = {
+//   c: PropTypes.string.isRequired,
+// };
 
 export default Detail;

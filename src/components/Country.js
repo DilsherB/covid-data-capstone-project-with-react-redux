@@ -22,7 +22,11 @@ const Country = () => {
   };
   const handleOpenDetail = (country) => {
     setCurrentCuntary(country);
-    navigate(`/country/${country}`);
+    navigate(`/country/${country}`, {
+      state: {
+        country,
+      },
+    });
   };
 
   return (
