@@ -10,8 +10,10 @@ const Continent = () => {
   );
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchContinent());
-  }, [dispatch]);
+    if (!continents.length) {
+      dispatch(fetchContinent());
+    }
+  }, [continents, dispatch]);
   return (
     <div>
       {loading && <h3>Loading...</h3>}
