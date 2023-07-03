@@ -1,9 +1,15 @@
 const DateComponent = (timestamp) => {
-  const date = new Date(timestamp);
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  return `${day}-${month}-${year}`;
+  const date = new Date(timestamp).toLocaleString("en-US", {
+    // This will remove the time from the date string.
+    timeZone: "UTC",
+    hour12: true,
+    minute: "2-digit",
+    hour: "2-digit",
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+  return date;
 };
 
 export default DateComponent;
