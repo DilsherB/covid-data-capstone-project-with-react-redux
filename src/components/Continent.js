@@ -13,7 +13,7 @@ const Continent = () => {
     if (!continents.length) {
       dispatch(fetchContinent());
     }
-  }, [continents]);
+  }, [continents, dispatch]);
   return (
     <div>
       {loading && <h3>Loading...</h3>}
