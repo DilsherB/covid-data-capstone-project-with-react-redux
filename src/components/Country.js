@@ -129,8 +129,10 @@ const Country = () => {
                 <span className="hidden md:flex mt-3">
                   <FaClock />
                 </span>
-                <span>Updated on: </span>
-                <span>{DateComponent(country.updated)}</span>
+                <div className="flex flex-col sm:flex-row sm:gap-5">
+                  <span>Updated on: </span>
+                  <span>{DateComponent(country.updated)}</span>
+                </div>
               </div>
             </div>
           );
