@@ -3,6 +3,7 @@ import { FaArrowLeft } from "react-icons/fa";
 // import PropTypes from 'prop-types';
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import DateComponent from "../globals";
 
 const Detail = () => {
   // eslint-disable-next-line no-unused-vars
@@ -58,7 +59,7 @@ const Detail = () => {
             </tr>
             <tr className="font-bold bg-slate-300 px-8">
               <td colSpan={2} className="px-3 py-1">
-                Last Updated at :{new Date(countryData.updated).toLocaleString()}
+                Last Updated at: {DateComponent(countryData.updated)}
               </td>
             </tr>
           </tbody>
