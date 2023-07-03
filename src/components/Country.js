@@ -22,7 +22,7 @@ const Country = () => {
   };
   const handleOpenDetail = (country) => {
     dispatch(changeCountry(country));
-    navigate(`/country/${country}`);
+    navigate(`/country/${country.country}`);
   };
 
   return (
@@ -119,7 +119,7 @@ const Country = () => {
                   <button
                     type="button"
                     className="w-max text-xs sm:text-base text-white bg-slate-700 hover:bg-slate-300 rounded-lg px-1 md:px-6 py-1 md:py-2"
-                    onClick={() => handleOpenDetail(country.country)}
+                    onClick={() => handleOpenDetail(country)}
                   >
                     Open Detail{" "}
                   </button>
