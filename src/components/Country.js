@@ -21,13 +21,8 @@ const Country = () => {
     setShow(true);
   };
   const handleOpenDetail = (country) => {
-    setCurrentCuntary(country);
     dispatch(changeCountry(country));
-    navigate(`/country/${country}`, {
-      state: {
-        country,
-      },
-    });
+    navigate(`/country/${country}`);
   };
 
   return (
