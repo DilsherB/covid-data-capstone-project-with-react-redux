@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaClock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { fetchCountries } from "../redux/countrySlice";
+import { fetchCountries, changeCountry } from "../redux/countrySlice";
 import DateComponent from "../globals";
 
 const Country = () => {
@@ -22,6 +22,7 @@ const Country = () => {
   };
   const handleOpenDetail = (country) => {
     setCurrentCuntary(country);
+    dispatch(changeCountry(country));
     navigate(`/country/${country}`, {
       state: {
         country,
