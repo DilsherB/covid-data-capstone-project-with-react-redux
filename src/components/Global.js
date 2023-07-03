@@ -9,8 +9,11 @@ const Global = () => {
   const { globals, loading, error } = useSelector((state) => state.globalSlice);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchGlobalData());
-  }, [dispatch]);
+    // Only fetch global data on first load
+    if (!globals.cases) {
+      dispatch(fetchGlobalData());
+    }
+  }, [globals, dispatch]);
   const handleShowData = () => {
     setShowData(!showData);
   };
