@@ -14,8 +14,11 @@ const Country = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCountries());
-  }, [dispatch]);
+    // Only fetch countries data on first load
+    if (!countries.length) {
+      dispatch(fetchCountries());
+    }
+  },);
   const handleShow = (country) => {
     setCurrentCuntary(country);
     setShow(true);
