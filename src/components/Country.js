@@ -14,20 +14,18 @@ const Country = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCountries());
-  }, [dispatch]);
+    // Only fetch countries data on first load
+    if (!countries.length) {
+      dispatch(fetchCountries());
+    }
+  },);
   const handleShow = (country) => {
     setCurrentCuntary(country);
     setShow(true);
   };
   const handleOpenDetail = (country) => {
-    setCurrentCuntary(country);
     dispatch(changeCountry(country));
-    navigate(`/country/${country}`, {
-      state: {
-        country,
-      },
-    });
+    navigate(`/country/${country.country}`);
   };
 
   return (
@@ -124,7 +122,7 @@ const Country = () => {
                   <button
                     type="button"
                     className="w-max text-xs sm:text-base text-white bg-slate-700 hover:bg-slate-300 rounded-lg px-1 md:px-6 py-1 md:py-2"
-                    onClick={() => handleOpenDetail(country.country)}
+                    onClick={() => handleOpenDetail(country)}
                   >
                     Open Detail{" "}
                   </button>
@@ -134,8 +132,10 @@ const Country = () => {
                 <span className="hidden md:flex mt-3">
                   <FaClock />
                 </span>
-                <span>Updated on: </span>
-                <span>{DateComponent(country.updated)}</span>
+                <div className="flex flex-col sm:flex-row sm:gap-5">
+                  <span>Updated on: </span>
+                  <span>{DateComponent(country.updated)}</span>
+                </div>
               </div>
             </div>
           );
