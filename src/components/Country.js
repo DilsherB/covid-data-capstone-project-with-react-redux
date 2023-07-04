@@ -18,7 +18,7 @@ const Country = () => {
     if (!countries.length) {
       dispatch(fetchCountries());
     }
-  },);
+  }, [countries.length, dispatch]);
   const handleShow = (country) => {
     setCurrentCuntary(country);
     setShow(true);
