@@ -7,7 +7,7 @@ const initialState = {
   countries: [],
   loading: false,
   error: "",
-  country: "",
+  country: {},
 };
 
 export const fetchCountries = createAsyncThunk(

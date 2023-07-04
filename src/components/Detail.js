@@ -6,11 +6,7 @@ import { NavLink } from "react-router-dom";
 import DateComponent from "../globals";
 
 const Detail = () => {
-  // eslint-disable-next-line no-unused-vars
-  const currentCuntary = useSelector((state) => state.countrySlice.country);
-  const countryData = useSelector((state) => state.countrySlice.countries.find(
-    (country) => country.country === currentCuntary
-  ));
+  const countryData = useSelector((state) => state.countrySlice.country);
   return (
     <div>
       <NavLink to="/home">
