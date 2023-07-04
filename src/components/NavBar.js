@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState("/");
   const menuItems = {
-    "/": "Home",
+    "/home": "Home",
     "/contact": "Contact",
   };
 
