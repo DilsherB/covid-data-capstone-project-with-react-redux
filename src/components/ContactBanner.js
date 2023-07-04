@@ -18,7 +18,7 @@ const ContactBanner = () => {
         </p>
         <p className="text-lg font-semibold text-slate-600 flex justify-between">
           <a
-            href="https://www.linkedin.com/in/dilsherbalouch/"
+            href="https://www.linkedin.com/in/dilsher-balouch/"
             target="_blank"
             rel="noreferrer"
           >

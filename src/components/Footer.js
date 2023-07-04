@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="flex justify-center">
         <p className="text-lg font-semibold text-slate-600 flex gap-5">
           <a
-            href="https://www.linkedin.com/in/dilsherbalouch/"
+            href="https://www.linkedin.com/in/dilsher-balouch/"
             target="_blank"
             rel="noreferrer"
           >
