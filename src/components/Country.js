@@ -30,7 +30,11 @@ const Country = () => {
 
   return (
     <div>
-      {loading && <h3 className="text-center">Loading...</h3>}
+      {loading && (
+        <div className="loader-container">
+          <div className="spinner" />
+        </div>
+      )}
       {error && <h3>{error}</h3>}
       <div className="grid grid-cols-2 mx-5 md:gap-10 overflow-hidden">
         {countries.map((country) => {
