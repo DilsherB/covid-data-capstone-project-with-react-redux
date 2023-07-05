@@ -31,7 +31,7 @@ const Country = () => {
   return (
     <div>
       {loading && (
-        <div className="loader-container">
+        <div className="loader-container py-[20%] md:py-[10%]">
           <div className="spinner" />
         </div>
       )}
