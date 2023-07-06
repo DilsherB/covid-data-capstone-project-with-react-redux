@@ -30,7 +30,11 @@ const Country = () => {
 
   return (
     <div>
-      {loading && <h3 className="text-center">Loading...</h3>}
+      {loading && (
+        <div className="loader-container py-[20%] md:py-[10%]">
+          <div className="spinner" />
+        </div>
+      )}
       {error && <h3>{error}</h3>}
       <div className="grid grid-cols-2 mx-5 md:gap-10 overflow-hidden">
         {countries.map((country) => {
@@ -41,7 +45,7 @@ const Country = () => {
               key={country.country}
             >
               <div className="flex gap-3">
-                <div className="hidden bg-slate-200 h-32 lg:h-max lg:mb-5 w-1/3 md:flex items-center justify-center rounded p-3">
+                <div className="hidden bg-slate-200 h-32 lg:h-max lg:mb-5 w-1/3 md:flex items-center justify-center rounded p-3 aspect-square">
                   <img
                     // width={200}
                     className="rounded"
