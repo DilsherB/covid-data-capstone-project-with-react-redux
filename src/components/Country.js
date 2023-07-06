@@ -45,7 +45,7 @@ const Country = () => {
               key={country.country}
             >
               <div className="flex gap-3">
-                <div className="hidden bg-slate-200 h-32 lg:h-max lg:mb-5 w-1/3 md:flex items-center justify-center rounded p-3">
+                <div className="hidden bg-slate-200 h-32 lg:h-max lg:mb-5 w-1/3 md:flex items-center justify-center rounded p-3 aspect-square">
                   <img
                     // width={200}
                     className="rounded"
